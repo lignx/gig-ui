@@ -1,0 +1,8 @@
+# gitignore
+.editorconfig
+
+# compiled program
+gig-ui
+
+# resources
+# resr
