@@ -2,12 +2,12 @@
 
 module m_graphics
 
-import raylib
+import m_serv_graphics.m_raylib
 
 // figure out later, to add multiple fonts, sizes and styles
 struct State {
 	mut:
-		font raylib.Font
+		font m_raylib.Font
 }
 
 
@@ -15,7 +15,7 @@ pub const state = &State{}
 
 
 pub fn load_font() {
-	&State(state).font = raylib.load_font("resr/font/Hack-Regular.ttf")
+	&State(state).font = m_raylib.load_font("resr/font/Hack-Regular.ttf")
 }
 
 
@@ -41,39 +41,33 @@ pub mut:
 // draws a square box
 // with the given color
 pub fn draw_box(pos Position, clr Color) {
-	raylib.draw_rectangle(
+	m_raylib.draw_rectangle(
 		pos.x, pos.y,
 		pos.w, pos.h,
-		raylib.Color{clr.r, clr.g, clr.b, clr.a}
+		clr.r, clr.g, clr.b, clr.a
 	)
 }
 
 
 pub fn draw_text(tex string, pos Position, size int, clr Color, spc f32) {
-	// raylib.draw_text(
-	// 	tex,
-	// 	pos.x, pos.y, size,
-	// 	raylib.Color{clr.r, clr.g, clr.b, clr.a}
-	// )
-	
-	raylib.draw_text_ex(
+	m_raylib.draw_text_ex(
 		state.font,
 		tex,
-		raylib.Vector2{ pos.x, pos.y },
-		size,
-		spc, //float spacing,
-		raylib.Color{clr.r, clr.g, clr.b, clr.a}
+		f32(pos.x), f32(pos.y),
+		f32(size),
+		spc,
+		clr.r, clr.g, clr.b, clr.a
 	)
 }
 
 
 pub fn begin_drawing() {
-	raylib.begin_drawing()
+	m_raylib.begin_drawing()
 }
 
 
 pub fn end_drawing() {
-	raylib.end_drawing()
+	m_raylib.end_drawing()
 }
 
 
@@ -86,13 +80,8 @@ pub fn clear_background() {
 
 pub fn measure_text(text string, font_size f32, spacing f32) int {
 	
-	f_width := raylib.measure_text_ex(state.font, text, font_size, spacing).x
+	f_width, _ := m_raylib.measure_text_ex(state.font, text, font_size, spacing)
 	i_width := int(f_width)
 	println("width: ${i_width}")
 	return i_width
-
-	//
-
-	// return raylib.measure_text(text, font_size)
-
 }
