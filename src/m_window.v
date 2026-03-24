@@ -10,7 +10,7 @@
 
 module m_window
 
-import raylib
+import m_serv_graphics.m_raylib
 import m_graphics
 
 
@@ -48,21 +48,21 @@ pub fn open() Window {
 		// }
 	}
 			
-	raylib.set_config_flags(raylib.ConfigFlags.flag_window_resizable)
-	raylib.init_window(window.w, window.h, "gig-ui")
-	raylib.set_target_fps(5)
+	m_raylib.set_config_resizable()
+	m_raylib.init_window(window.w, window.h, "gig-ui")
+	m_raylib.set_target_fps(5)
 
 	return window
 }
 
 
 pub fn closing() bool {
-	return raylib.window_should_close()
+	return m_raylib.window_should_close()
 }
 
 
 pub fn close() {
-	raylib.close_window()
+	m_raylib.close_window()
 }
 
 
