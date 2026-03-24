@@ -22,6 +22,30 @@ This State object, has an "update" boolean property.
 Indicating wheter the UI needs to be redrawn.
 
 
+## Module top-level State
+
+This project uses a special techinque, for storing state.
+(In some cases). Module-top-level-state, is not allowed
+on Vlang, by default.
+
+This special technique, allows it.
+It consist on creating a constant pointer, at the module
+top-level. To a struct, that contains the state variables.
+To be able to mutate the state variables, we need to
+cast it into a normal pointer. this allows the mutation.
+
+Example:
+```
+// `state` is the module-top-level constant pointer
+// It is casted into a plain pointer.
+// This cast, enables the mutation.
+&State(state).font 
+```
+
+This feature could be disallowed, in some future Vlang
+compiler update. We hope it is not. If that happen,
+we will have to look for another solution.
+
 
 
 ## Structure
