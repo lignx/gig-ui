@@ -2,7 +2,7 @@
 
 module m_input
 
-import m_serv_graphics.m_raylib
+import m_raylib
 import encoding.utf8
 import m_ui
 

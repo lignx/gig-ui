@@ -2,7 +2,9 @@
 
 module m_graphics
 
-import m_serv_graphics.m_raylib
+import m_raylib
+
+
 
 // figure out later, to add multiple fonts, sizes and styles
 struct State {

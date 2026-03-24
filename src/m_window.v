@@ -10,7 +10,7 @@
 
 module m_window
 
-import m_serv_graphics.m_raylib
+import m_raylib
 import m_graphics
 
 

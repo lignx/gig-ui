@@ -3,7 +3,7 @@
 module m_view
 
 
-import m_serv_graphics.m_raylib
+import m_raylib
 
 
 
