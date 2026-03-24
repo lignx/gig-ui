@@ -54,3 +54,14 @@ pub fn measure_text_ex(font Font, text string, font_size f32, spacing f32) (f32,
 	res := raylib.measure_text_ex(font, text, font_size, spacing)
 	return res.x, res.y
 }
+
+
+// Input functions
+
+pub fn get_key_pressed() int {
+	return raylib.get_key_pressed()
+}
+
+pub fn get_char_pressed() int {
+	return raylib.get_char_pressed()
+}

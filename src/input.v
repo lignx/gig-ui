@@ -2,7 +2,7 @@
 
 module m_input
 
-import raylib
+import m_serv_graphics.m_raylib
 import encoding.utf8
 import m_ui
 
@@ -11,7 +11,7 @@ import m_ui
 pub fn handle_input() {
 
 	// TODO move raylib.. to window module
-	key_pressed := raylib.get_key_pressed()
+	key_pressed := m_raylib.get_key_pressed()
 	if key_pressed > 0 {
 		handle_keys(key_pressed)
 	}   
@@ -21,7 +21,7 @@ pub fn handle_input() {
 fn handle_keys(key int) {
 
 	// get character input
-	unicode := raylib.get_char_pressed()
+	unicode := m_raylib.get_char_pressed()
 	if unicode > 0 {
 		character_input(u8(unicode))
 	}
