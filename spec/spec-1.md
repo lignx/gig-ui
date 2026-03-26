@@ -11,6 +11,28 @@ Later, the app code will be moved into a "test" module.
 And the package will be a library.
 
 
+# Next Commit file
+
+The `next-commit.md` file, is a detailed description, of the next commit.
+
+For use with AI coding.
+The goal is to provide a detailed description, of goals, requirements,
+and implementation details. So that the AI, can get a detailed
+understanding of what is being done.
+
+It's intended as an improvement, over a plain prompt.
+When thing are complex, it's a space for a much more
+detailed plan, for the next commit.
+
+Intended for use with complex commits, only.
+A simple commit, will not require this detailed description.
+In these cases, the file should be set to empty.
+
+File content will be completely overwritten, on each commit.
+The info will remain only, in the git history.
+
+
+
 ## Operation
 
 These state objects, will be added soon:
